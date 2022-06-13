@@ -369,18 +369,18 @@ class PointStackSeg(nn.Module):
             last_channel = out_channel
 
             self.fc_pre_mha_list.append(nn.Sequential(
-                nn.Conv1d(in_channels=out_channel, out_channels=1024, kernel_size=1, bias = False),
-                nn.BatchNorm1d(1024),
+                nn.Conv1d(in_channels=out_channel, out_channels=cfg.NETWORK.ENCODER.LQ_DIM, kernel_size=1, bias = False),
+                nn.BatchNorm1d(cfg.NETWORK.ENCODER.LQ_DIM),
                 nn.ReLU()
             ))
 
-            self.mha_list.append(nn.MultiheadAttention(embed_dim=1024, num_heads=16, batch_first=True, bias = False))
-            self.lq_list.append(nn.Parameter(torch.rand(1, 1024, 64)))
+            self.mha_list.append(nn.MultiheadAttention(embed_dim=cfg.NETWORK.ENCODER.LQ_DIM, num_heads=16, batch_first=True, bias = False))
+            self.lq_list.append(nn.Parameter(torch.rand(1, cfg.NETWORK.ENCODER.LQ_DIM, 64)))
             lq_multiplier += 1
             en_dims.append(last_channel)
 
-        self.global_lq = nn.Parameter(torch.rand(1, 1024*lq_multiplier, 1))
-        self.global_mha = nn.MultiheadAttention(embed_dim=1024*lq_multiplier, num_heads=16, batch_first = True, bias = False)
+        self.global_lq = nn.Parameter(torch.rand(1, cfg.NETWORK.ENCODER.LQ_DIM*lq_multiplier, 1))
+        self.global_mha = nn.MultiheadAttention(embed_dim=cfg.NETWORK.ENCODER.LQ_DIM*lq_multiplier, num_heads=16, batch_first = True, bias = False)
 
         ### Building Decoder #####
         self.decode_list = nn.ModuleList()

@@ -26,6 +26,8 @@ NETWORK:
         K_NEIGHBORS: [24, 24, 24, 24]
         REDUCERS: [2, 2, 2, 2]
 
+        LQ_DIM: 1024
+
     HEAD:
         CLASSIFIER:
             NAME: LinearClassifier

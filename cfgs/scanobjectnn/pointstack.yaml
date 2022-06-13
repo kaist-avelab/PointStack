@@ -29,12 +29,14 @@ NETWORK:
         K_NEIGHBORS: [24, 24, 24, 24]
         REDUCERS: [2, 2, 2, 2]
 
+        LQ_DIM: 128
+
     HEAD:
         CLASSIFIER:
             NAME: LinearClassifier
-            IN_CHANNELS: [4096]
+            IN_CHANNELS: [512]
             ACT: relu
-            DIMS: [1024, 512, 256]
+            DIMS: [512, 256]
 
 OPTIMIZER:
     NAME: SGD

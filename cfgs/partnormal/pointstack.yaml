@@ -1,4 +1,4 @@
-RANDOM_SEED: 2
+RANDOM_SEED: 15
 DATASET:
     NAME: PartNormal
     NUM_CLASS: 50
@@ -25,10 +25,12 @@ NETWORK:
         K_NEIGHBORS: [24, 24, 24, 24]
         REDUCERS: [2, 2, 2, 2]
 
+        LQ_DIM: 128
+
     HEAD:
         SEGMENTATOR:
             NAME: LinearSegmentator
-            IN_CHANNELS: [4288]
+            IN_CHANNELS: [704]
             ACT: relu
             DIMS: [512, 256]
 
