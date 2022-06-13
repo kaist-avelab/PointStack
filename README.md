@@ -88,10 +88,10 @@ Our pretrained model achieves the following performances on :
 
 | Model name         | Overall Accuracy  | Class Mean Accuracy |
 | ------------------ |---------------- | -------------- |
-| [PointStack]([https://drive.google.com/file/d/1XTfYSkc0m4GKEhcV0wLAsb8GJ3-hBaiz/view?usp=sharing](https://drive.google.com/file/d/1xo-PtK7m5k4FscwZHNYh1BF-CjZjtU9n/view?usp=sharing))   |     87.8%         |      86.7%       |
+| [PointStack](https://drive.google.com/file/d/1xo-PtK7m5k4FscwZHNYh1BF-CjZjtU9n/view?usp=sharing)   |     87.8%         |      86.7%       |
 
 ### [3D Part Segmentation on ShapeNetPart](https://paperswithcode.com/sota/3d-part-segmentation-on-shapenet-part)
 
 | Model name         | Instance mIoU  | 
 | ------------------ |---------------- |
-| [PointStack]([https://drive.google.com/file/d/1Gab0_Cmdc-QFDgdMnWNMCP1NnE4_Uex1/view?usp=sharing](https://drive.google.com/file/d/1xoO9D9TDuW2UBFKD_vL1yeT2OgXA4q4j/view?usp=sharing))   |     87.3%         |
+| [PointStack](https://drive.google.com/file/d/1xoO9D9TDuW2UBFKD_vL1yeT2OgXA4q4j/view?usp=sharing)   |     87.3%         |
