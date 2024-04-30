@@ -100,7 +100,7 @@ def validate(net, testloader, criterion, device, is_segmentation = False):
                 batch_ious = data_dic['pred_score_logits'].new_tensor([np.sum(miou)], dtype=torch.float64)  # same device with seg_pred
 
                 # prepare seg_pred and target for later calculating loss and acc:
-                seg_pred = data_dic['pred_score_logits'].contiguous().view(-1, 50) # ShapeNetPart has 50 classes
+                seg_pred = data_dic['pred_score_logits'].contiguous().view(-1, 13) # ShapeNetPart has 50 classes / S3DIS has 13 classes
 
                 target = data_dic['seg_id'].view(-1, 1)[:, 0]
                 # Loss
